@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import "./App.css";
+import "./keyboard.css";
 // import { DeleteButton, SpaceButton } from "./keybord";
 
 export const english = [
@@ -55,13 +55,34 @@ export const hebrew = [
   "ת",
 ];
 
-function Keys({ SpaceButton, DeleteButton, Clear, UpperCase }) {
+function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor }) {
   return (
     <div id="extrakeybord">
-      <button onClick={DeleteButton}>Delete</button>
-      <button onClick={SpaceButton}>Space</button>
-      <button onClick={Clear}>Clear</button>
-      <button onClick={UpperCase}>UpperCase</button>
+      <button className="special" onClick={DeleteButton}>
+        Delete
+      </button>
+      <button className="special" onClick={SpaceButton}>
+        Space
+      </button>
+      <button className="special" onClick={Clear}>
+        Clear
+      </button>
+      <button className="special" onClick={UpperCase}>
+        UpperCase
+      </button>
+      <button onClick={changeColor} value="red">
+        red
+      </button>
+      <button onClick={changeColor} value="blue">
+        blue
+      </button>
+      <button onClick={changeColor} value="green">
+        green
+      </button>
+
+      {/* <button className="special" onClick={FontColor}>
+        FontColor
+      </button> */}
     </div>
   );
 }

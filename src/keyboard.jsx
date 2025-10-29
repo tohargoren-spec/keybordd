@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./keyboard.css";
 import { english, hebrew } from "./keys";
 import Keys from "./keys";
 
 function AllKeyboard() {
   const [inputValue, setInputValue] = useState("");
+  const [newcolor, setNewcolor] = useState("black");
   const DeleteButton = () => {
     setInputValue(inputValue.slice(0, -1));
   };
@@ -20,6 +21,11 @@ function AllKeyboard() {
   const UpperCase = () => {
     setInputValue((prev) => prev.toUpperCase());
   };
+  const changeColor = (event) => {
+    setNewcolor(event.target.value);
+    console.log(newcolor);
+  };
+
   function Keyboard({ arr }) {
     return arr.map((item, index) => (
       <button key={index} value={item} onClick={handleChange}>
@@ -30,17 +36,20 @@ function AllKeyboard() {
 
   return (
     <div className="keybord">
-      <p>{inputValue}</p>
+      <p style={{ color: newcolor }}>{inputValue}</p>
       <div id="letters">
         <Keyboard arr={english}></Keyboard>
         <Keyboard arr={hebrew}></Keyboard>
       </div>
-      <Keys
-        SpaceButton={SpaceButton}
-        DeleteButton={DeleteButton}
-        Clear={Clear}
-        UpperCase={UpperCase}
-      />
+      <div className="specialdiv">
+        <Keys
+          SpaceButton={SpaceButton}
+          DeleteButton={DeleteButton}
+          Clear={Clear}
+          UpperCase={UpperCase}
+          changeColor={changeColor}
+        />
+      </div>
     </div>
   );
 }
