@@ -4,6 +4,7 @@ import { english, hebrew } from "./keys";
 import Keys from "./keys";
 
 function AllKeyboard() {
+  const [upperCase, setUpperCase] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [newcolor, setNewcolor] = useState("black");
   const DeleteButton = () => {
@@ -18,12 +19,14 @@ function AllKeyboard() {
   const Clear = () => {
     setInputValue(" ");
   };
-  const UpperCase = () => {
+  const AllUpperCase = () => {
     setInputValue((prev) => prev.toUpperCase());
+  };
+  const toggleUpperCase = () => {
+    setUpperCase((prev) => !prev);
   };
   const changeColor = (event) => {
     setNewcolor(event.target.value);
-    console.log(newcolor);
   };
 
   function Keyboard({ arr }) {
@@ -36,7 +39,9 @@ function AllKeyboard() {
 
   return (
     <div className="keybord">
-      <p style={{ color: newcolor }}>{inputValue}</p>
+      <p style={{ color: newcolor }}>
+        {upperCase ? inputValue.toUpperCase() : inputValue}
+      </p>
       <div id="letters">
         <Keyboard arr={english}></Keyboard>
         <Keyboard arr={hebrew}></Keyboard>
@@ -46,8 +51,9 @@ function AllKeyboard() {
           SpaceButton={SpaceButton}
           DeleteButton={DeleteButton}
           Clear={Clear}
-          UpperCase={UpperCase}
+          AllUpperCase={AllUpperCase}
           changeColor={changeColor}
+          UpperCase={UpperCase}
         />
       </div>
     </div>

@@ -55,7 +55,14 @@ export const hebrew = [
   "ת",
 ];
 
-function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor }) {
+function Keys({
+  SpaceButton,
+  DeleteButton,
+  Clear,
+  AllUpperCase,
+  changeColor,
+  UpperCase,
+}) {
   return (
     <div id="extrakeybord">
       <button className="special" onClick={DeleteButton}>
@@ -67,9 +74,18 @@ function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor }) {
       <button className="special" onClick={Clear}>
         Clear
       </button>
-      <button className="special" onClick={UpperCase}>
+      <button className="special" onClick={AllUpperCase}>
+        AllUpperCase
+      </button>
+      <button
+        className="special"
+        onClick={UpperCase(
+          UpperCase ? setUpperCase.toUpperCase() : setUpperCase.toLowerCase()
+        )}
+      >
         UpperCase
       </button>
+
       <button onClick={changeColor} value="red">
         red
       </button>
