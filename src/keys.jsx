@@ -55,7 +55,7 @@ export const hebrew = [
   "ת",
 ];
 
-function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor }) {
+function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor, changekeybord }) {
   return (
     <div id="extrakeybord">
       <button className="special" onClick={DeleteButton}>
@@ -80,9 +80,12 @@ function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor }) {
         green
       </button>
 
-      {/* <button className="special" onClick={FontColor}>
-        FontColor
-      </button> */}
+      <button className="special" onClick={()=> {changekeybord("en")}}>
+        english 
+      </button>
+      <button className="special" onClick={()=> {changekeybord("he")}}>
+        hebrew 
+      </button>
     </div>
   );
 }
