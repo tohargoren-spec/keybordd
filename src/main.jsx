@@ -1,11 +1,12 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 // import './index.css'
 
-import Keybord from './keybord.jsx'
+import Keyboard from "./keyboard.jsx";
+import Keyes from "./keys.jsx";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Keybord/>
-  </StrictMode>,
-)
+    <Keyboard />
+  </StrictMode>
+);
