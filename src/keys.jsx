@@ -55,13 +55,13 @@ export const hebrew = [
   "ת",
 ];
 
-function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor, changekeybord }) {
 function Keys({
   SpaceButton,
   DeleteButton,
   Clear,
-  AllUpperCase,
+  UpperCase,
   changeColor,
+  changekeybord,
   UpperCase,
 }) {
   return (
@@ -97,11 +97,21 @@ function Keys({
         green
       </button>
 
-      <button className="special" onClick={()=> {changekeybord("en")}}>
-        english 
+      <button
+        className="special"
+        onClick={() => {
+          changekeybord("en");
+        }}
+      >
+        english
       </button>
-      <button className="special" onClick={()=> {changekeybord("he")}}>
-        hebrew 
+      <button
+        className="special"
+        onClick={() => {
+          changekeybord("he");
+        }}
+      >
+        hebrew
       </button>
     </div>
   );
