@@ -54,16 +54,12 @@ export const hebrew = [
   "ש",
   "ת",
 ];
-
-function Keys({
-  SpaceButton,
-  DeleteButton,
-  Clear,
-  UpperCase,
-  changeColor,
-  changekeybord,
-  UpperCase,
-}) {
+export const korean = [
+  
+  "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
+  "ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ",
+];
+function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor, changekeybord }) {
   return (
     <div id="extrakeybord">
       <button className="special" onClick={DeleteButton}>
@@ -75,18 +71,9 @@ function Keys({
       <button className="special" onClick={Clear}>
         Clear
       </button>
-      <button className="special" onClick={AllUpperCase}>
-        AllUpperCase
-      </button>
-      <button
-        className="special"
-        onClick={UpperCase(
-          UpperCase ? setUpperCase.toUpperCase() : setUpperCase.toLowerCase()
-        )}
-      >
+      <button className="special" onClick={UpperCase}>
         UpperCase
       </button>
-
       <button onClick={changeColor} value="red">
         red
       </button>
@@ -97,21 +84,14 @@ function Keys({
         green
       </button>
 
-      <button
-        className="special"
-        onClick={() => {
-          changekeybord("en");
-        }}
-      >
-        english
+      <button className="special" onClick={()=> {changekeybord("en")}}>
+        english 
       </button>
-      <button
-        className="special"
-        onClick={() => {
-          changekeybord("he");
-        }}
-      >
-        hebrew
+      <button className="special" onClick={()=> {changekeybord("he")}}>
+        hebrew 
+      </button>
+      <button className="special" onClick={()=> {changekeybord("ko")}}>
+        korean 
       </button>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./keyboard.css";
-import { english, hebrew } from "./keys";
+import { english, hebrew, korean } from "./keys";
 import Keys from "./keys";
 
 
@@ -8,7 +8,6 @@ import Keys from "./keys";
 function AllKeyboard() {
   const [upperCase, setUpperCase] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const 
   const [newcolor, setNewcolor] = useState("black");
   const [newlanguage, setNewlanguage] = useState("en");
   const DeleteButton = () => {
@@ -26,7 +25,7 @@ function AllKeyboard() {
   const AllUpperCase = () => {
     setInputValue((prev) => prev.toUpperCase());
   };
-  const toggleUpperCase = () => {
+  const UpperCase = () => {
     setUpperCase((prev) => !prev);
   };
   const changeColor = (event) => {
@@ -45,7 +44,10 @@ function AllKeyboard() {
   }
   else if(newlanguage =="he"){
     currentKeys = hebrew;
-  }else{
+  }else if(newlanguage =="ko"){
+    currentKeys = korean;
+  }
+  else{
     currentKeys = english;
   }
 
