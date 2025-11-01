@@ -59,7 +59,7 @@ export const korean = [
   "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
   "ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ",
 ];
-function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor, changekeybord }) {
+function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor, changekeybord , changeSize}) {
   return (
     <div id="extrakeybord">
       <button className="special" onClick={DeleteButton}>
@@ -82,6 +82,18 @@ function Keys({ SpaceButton, DeleteButton, Clear, UpperCase, changeColor, change
       </button>
       <button onClick={changeColor} value="green">
         green
+      </button>
+      <button onClick={changeColor} value="black">
+        black
+      </button>
+      <button onClick={changeSize} value="25px">
+        small
+      </button>
+      <button onClick={changeSize} value="40px">
+        middle
+      </button>
+      <button onClick={changeSize} value="70px">
+        big
       </button>
 
       <button className="special" onClick={()=> {changekeybord("en")}}>
